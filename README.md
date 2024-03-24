@@ -32,5 +32,3 @@ If you would like to contribute, contact me on;
 
 ## Author
 Benson Gitau
-
-
