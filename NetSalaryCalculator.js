@@ -6,6 +6,7 @@ let benefits = parseFloat(prompt('Enter your total benefits'));
 // function to calculate the total gross salary. adds the basic salary and the benefits.
 function grossSalary(basicSal ,  benefit){
     return basicSal + benefit;
+//returns gross salary
 };
 grossSalary(basicSalary, benefits);
 
@@ -47,6 +48,7 @@ function nhifdecuctions(salary){
     } else {
         deductions = 1700;
     };
+//returns deductions
     return deductions;
 };
 nhifdecuctions(grossSalary);
@@ -56,6 +58,7 @@ nhifdecuctions(grossSalary);
 const taxablePay = function(Salary){
     const nssfcontribution = 1080;
     amountToTax = Salary - nssfcontribution;
+//returns the amount to tax
     return amountToTax;
 }
 taxablePay(grossSalary);
@@ -78,6 +81,7 @@ function payeeCalculator(s){
     } else {
         payee = parseFloat(s * 0.35);
     };
+//returns the payee
     return payee - personalRelief - insuaranceRelief;
 
  
@@ -89,5 +93,6 @@ payeeCalculator(taxablePay);
 function netsalary(){
     netsal = taxablePay - payeeCalculator - nhifdecuctions;
     return netsal;
+//returns net salary
 };
 netsalary();
