@@ -3,18 +3,21 @@
 let basicSalary = parseFloat(prompt('Enter your basic Salary'));
 let benefits = parseFloat(prompt('Enter your total benefits'));
 
-// function to calculate the total gross salary. adds the basic salary and the benefits.
-function grossSalary(basicSal ,  benefit){
-    return basicSal + benefit;
-//returns gross salary
+//  to calculate the total gross salary. adds the basic salary and the benefits.
+function grossSalary(basicSalary, benefits) {
+    return basicSalary + benefits;
 };
-grossSalary(basicSalary, benefits);
+const value = grossSalary(50000, 10000)
+//returns gross salary
+
 
 
 
 //function to calculate nhif deductions based on the different salary grades.
-function nhifdecuctions(salary){
+function nhifdecuctions(value){
     let deductions;
+    let salary = value;
+//conditions
     if (salary < 6000) {
         deductions = 150;
     } else if (salary < 8000) {
@@ -51,20 +54,23 @@ function nhifdecuctions(salary){
 //returns deductions
     return deductions;
 };
-nhifdecuctions(grossSalary);
+nhifdecuctions(value)
 
 
 //A function to calculate the taxable income by deducting the nhif contribution
-const taxablePay = function(Salary){
+function taxablePay(value){
     const nssfcontribution = 1080;
-    amountToTax = Salary - nssfcontribution;
+   return taxablePay = value - nssfcontribution;
 //returns the amount to tax
-    return amountToTax;
-}
-taxablePay(grossSalary);
+    
+};
+taxablePay(value);
+
+
 
 ///function to calculate payee.
-function payeeCalculator(s){
+function payeeCalculator(taxablePay){
+    let s = taxablePay;
     const personalRelief = 2400;
     const insuaranceRelief = 5000;
     let payee;
@@ -88,11 +94,17 @@ function payeeCalculator(s){
 };
 payeeCalculator(taxablePay);
 
+
 //function to calculate the net salary
 // passing other functions as variables
-function netsalary(){
-    netsal = taxablePay - payeeCalculator - nhifdecuctions;
-    return netsal;
+function netsalary(grossSalary, nhifdecuctions, payeeCalculator){
+///netsalary =  grosssalary - tax -nhif
+    let grossSal = value;
+    let tax = payeeCalculator(taxablePay);
+    let nhif = nhifdecuctions(value);
+    let netsal = grossSal - tax - nhif;
+    return console.log('Netsalary:', netsal);
+    
 //returns net salary
 };
-netsalary();
+netsalary(grossSalary, nhifdecuctions, payeeCalculator);
