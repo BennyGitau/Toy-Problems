@@ -12,14 +12,13 @@ if demerits points is equal or greater than 12, prints license suspended.
 
 
 
-
-
 */
+ const prompt = require('prompt-sync')();
  //Solution 
 // function declaration
 function speedDetector(speed){
 //prompt to the user to put speed.
-    speed = Number(prompt('Enter the speed'));
+    speed = Number(prompt('Enter the speed :'));
 
 // condition
     if (speed <= 70){

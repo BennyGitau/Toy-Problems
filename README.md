@@ -22,9 +22,11 @@ Is a program that calculates an individual Net Salary, Gross salary, NHIFDeducti
 ## Set Up Instructions
 To run the program;
 * Download Vs code.
-* Install node Js.
 * Fork and clone the repo.
-* Run the program in your terminal.
+* Install node Js.
+* Run npm install to install npm.
+* Run npm install prompt-sync.
+* Run the programs in your terminal using node js.
 
 ## Contributions
 If you would like to contribute, contact me on;

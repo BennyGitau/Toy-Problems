@@ -1,13 +1,15 @@
 //Solution
 //prompts to request the user to enter the basic salary and benefits.
-let basicSalary = parseFloat(prompt('Enter your basic Salary'));
-let benefits = parseFloat(prompt('Enter your total benefits'));
+ const prompt = require('prompt-sync')();
+
+ let basicSalary = parseFloat(prompt('Enter your basic Salary :'));
+ let benefits = parseFloat(prompt('Enter your total benefits :'));
 
 //  to calculate the total gross salary. adds the basic salary and the benefits.
-function grossSalary(basicSalary, benefits) {
-    return basicSalary + benefits;
+function grossSalary(basic, benefits) {
+    return basic + benefits;
 };
-const value = grossSalary(50000, 10000)
+const value = grossSalary(basicSalary, benefits)
 //returns gross salary
 
 
@@ -97,14 +99,14 @@ payeeCalculator(taxablePay);
 
 //function to calculate the net salary
 // passing other functions as variables
-function netsalary(grossSalary, nhifdecuctions, payeeCalculator){
+function netsalary(value, nhifdecuctions, payeeCalculator){
 ///netsalary =  grosssalary - tax -nhif
-    let grossSal = value;
+    let grossSal = value
     let tax = payeeCalculator(taxablePay);
     let nhif = nhifdecuctions(value);
     let netsal = grossSal - tax - nhif;
-    return console.log('Netsalary:', netsal);
+    return (`Netsalary: ${netsal}`);
     
 //returns net salary
 };
-netsalary(grossSalary, nhifdecuctions, payeeCalculator);
+console.log(netsalary(value, nhifdecuctions, payeeCalculator));

@@ -25,10 +25,12 @@ function studentGradeGenerator(marks){
   
 }
 */
+ const prompt = require('prompt-sync')();
+
 // Solution
 // function that returns the grade.
  function studentGradeGenerator(marks){
-    marks = Number(prompt('Enter student marks'));
+    marks = Number(prompt('Enter student marks :'));
 //condition to check the grade
     if(marks > 79 && marks <= 100){
 //prints Grade a
@@ -46,8 +48,8 @@ function studentGradeGenerator(marks){
         return 'Grade E'
 //prints grade E
     } else {
-        console.log('Enter marks between 0 and 100!')
+        return('Enter marks between 0 and 100!')
     }
  }
 // invoking the function
- studentGradeGenerator();
+ console.log(studentGradeGenerator());
